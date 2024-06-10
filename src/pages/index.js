@@ -1,118 +1,110 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import Navbar from '../components/Navbar';
+import Banner from '../components/Banner';
+import ProductList from '../components/ProductList';
+import Image from 'next/image';
+import waIcon from '../../public/images/whatsapp.png';
+import igIcon from '../../public/images/instagram.png';
+import tokopediaIcon from '../../public/images/tokopedia.png';
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export default function Home({ products }) {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+    <div>
+      <Navbar />
+      <main className="pt-24 p-4 container mx-auto text-center">
+        <section id="home">
+          <Banner />
+          <h1 className="text-2xl font-bold my-8">CHECK OUR PRODUCTS!</h1>
+          <ProductList products={products} />
+        </section>
+        <section id="about-us" className="my-8 pt-8">
+          <h2 className="text-2xl font-bold">About Us</h2>
+          <p className="mt-4 text-gray-600">
+            We are a company dedicated to providing the best products to our customers. Our mission is to ensure customer satisfaction through quality and innovation.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <div className="flex justify-center mt-4 space-x-4">
+            <a href="https://wa.me/6281275392213" target="_blank" rel="noopener noreferrer">
+              <Image src={waIcon} alt="WhatsApp" className="w-10 h-10" width={40} height={40} />
+            </a>
+            <a href="https://www.instagram.com/hargamlm/" target="_blank" rel="noopener noreferrer">
+              <Image src={igIcon} alt="Instagram" className="w-10 h-10" width={40} height={40} />
+            </a>
+            <a href="https://www.tokopedia.com/hargamalam" target="_blank" rel="noopener noreferrer">
+              <Image src={tokopediaIcon} alt="Tokopedia" className="w-10 h-10" width={40} height={40} />
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
   );
+}
+
+export async function getStaticProps() {
+  const products = [
+    {
+      id: 1,
+      name: '𝗣𝗼𝗿𝘀𝗰𝗵𝗲 𝟵𝟳 𝗣𝗼𝗹𝗼 𝗦𝗵𝗶𝗿𝘁',
+      price: '$49.99',
+      image: '/images/product1.jpg',
+    },
+    {
+      id: 2,
+      name: '𝗚𝗶𝗼𝗿𝗱𝗮𝗻𝗼 𝗣𝗼𝗹𝗼 𝗦𝗵𝗶𝗿𝘁 𝗡𝗮𝗽𝗼𝗹𝗲𝗼𝗻',
+      price: '$19.99',
+      image: '/images/product2.jpg',
+    },
+    {
+      id: 3,
+      name: '𝗞𝗮𝗽𝗽𝗮 𝗠𝗼𝗻𝘁𝗲 𝗖𝗮𝗿𝗹𝗼 𝗠𝗼𝗻𝗮𝗰𝗼',
+      price: '$39.99',
+      image: '/images/product3.jpg',
+    },
+    {
+      id: 4,
+      name: '𝗗.𝗡.𝗔 𝗟𝗼𝗻𝗴 𝗦𝗹𝗲𝗲𝘃𝗲',
+      price: '$59.99',
+      image: '/images/product4.jpg',
+    },
+    {
+      id: 5,
+      name: '𝗞𝗮𝗼𝘀 𝗣𝘂𝗺a',
+      price: '$49.99',
+      image: '/images/product5.jpg',
+    },
+    {
+      id: 6,
+      name: '𝗙𝗶𝗹𝗮 𝗟𝗼𝗻𝗴 𝗦𝗹𝗲𝗲𝘃𝗲',
+      price: '$19.99',
+      image: '/images/product6.jpg',
+    },
+    {
+      id: 7,
+      name: '𝗛𝘂𝘀𝗵 𝗣𝘂𝗽𝗽𝗶𝗲𝘀 𝗣𝗼𝗹𝗼 𝗦𝗵𝗶𝗿𝘁',
+      price: '$39.99',
+      image: '/images/product7.jpg',
+    },
+    {
+      id: 8,
+      name: '𝗚𝗶𝗼𝗿𝗱𝗮𝗻𝗼 𝗣𝗼𝗹𝗼 𝗦𝗵𝗶𝗿𝘁',
+      price: '$59.99',
+      image: '/images/product8.jpg',
+    },
+    {
+      id: 9,
+      name: 'Sold Kilat (Semarang)',
+      price: '$49.99',
+      image: '/images/product9.jpg',
+    },
+    {
+      id: 10,
+      name: 'Polo Shirt Hush Puppies',
+      price: '$19.99',
+      image: '/images/product10.jpg',
+    },
+  ];
+
+  return {
+    props: {
+      products,
+    },
+  };
 }
